@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enock Nyamweya</title>
+    <meta
+      name="description"
+      content="Enock Nyamweya builds software, systems, and automation."
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #3d3d3d;
+        --muted: #7d8491;
+        --line: #d7dbe2;
+        --blue: #2563eb;
+        --orange: #f59e0b;
+        --soft: #f7f8fa;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111317;
+          --text: #e2e8f0;
+          --muted: #94a3b8;
+          --line: #262c36;
+          --blue: #60a5fa;
+          --orange: #fbbf24;
+          --soft: #1a202c;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        min-height: 100%;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100%;
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--blue);
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus-visible {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        outline: none;
+      }
+
+      .page {
+        width: 100%;
+        min-height: 100vh;
+        padding: 32px 18px 64px;
+      }
+
+      .sheet {
+        width: min(100%, 650px);
+        margin: 0 auto;
+      }
+
+      .topnav {
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid var(--line);
+        margin-bottom: 24px;
+      }
+
+      .topnav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0 16px;
+        color: var(--muted);
+        font-size: 12px;
+        border-bottom: 2px solid transparent;
+        transform: translateY(2px);
+      }
+
+      .topnav a:first-child {
+        padding-left: 0;
+      }
+
+      .topnav a.active {
+        color: var(--blue);
+        border-bottom-color: var(--orange);
+      }
+
+      .intro {
+        padding-bottom: 20px;
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--text);
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .subname {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .summary {
+        max-width: 600px;
+        margin: 16px 0 0;
+        color: var(--text);
+        font-size: 14px;
+      }
+
+      .quicklinks {
+        margin: 14px 0 0;
+      }
+
+      .quicklinks a::before {
+        content: "[";
+        color: var(--muted);
+      }
+
+      .quicklinks a::after {
+        content: "]";
+        color: var(--muted);
+      }
+
+      section {
+        padding: 22px 0 0;
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        color: var(--text);
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      h3 {
+        display: inline;
+        margin: 0;
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .copy p + p {
+        margin-top: 12px;
+      }
+
+      .entries {
+        display: grid;
+        gap: 16px;
+      }
+
+      .entry {
+        display: block;
+      }
+
+      .time {
+        display: inline;
+        color: var(--muted);
+      }
+
+      .time::after {
+        content: " - ";
+      }
+
+      .muted {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 2px;
+      }
+
+      ul {
+        list-style: none;
+        margin: 6px 0 0;
+        padding: 0;
+      }
+
+      li {
+        position: relative;
+        padding-left: 14px;
+        margin-top: 4px;
+      }
+
+      li::before {
+        content: "-";
+        position: absolute;
+        left: 0;
+        color: var(--muted);
+      }
+
+      .skills {
+        line-height: 1.8;
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <article class="sheet" aria-label="Enock Nyamweya portfolio">
+        <nav class="topnav" aria-label="Primary navigation">
+          <a class="active" href="/">Enock Nyamweya</a>
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#links">Links</a>
+        </nav>
+
+        <header class="intro">
+          <h1>Enock Nyamweya</h1>
+          <p class="subname">Software & Systems</p>
+          <p class="summary">
+            I like building things that work, taking apart things that do not, and making computers do the boring work for me.
+          </p>
+          <p class="quicklinks">
+            Links:
+            <a href="mailto:enockdansel@gmail.com">Email</a>
+            <a href="https://github.com/enockNyamweya">GitHub</a>
+            <a href="https://www.linkedin.com/in/danselonserio">LinkedIn</a>
+          </p>
+        </header>
+
+        <section id="about">
+          <h2>About</h2>
+          <div class="copy">
+            <p>
+              I care most about how software behaves in the real world. If a piece of tech feels like magic, I usually try to build a small version from scratch just to see how it works inside.
+            </p>
+            <p>
+              Most of my time goes into writing backend systems, figuring out concurrency so threads do not step on each other, and automating pipelines so I never have to do the same task twice by hand.
+            </p>
+            <p>
+              I do not get attached to specific languages. Hand me clear documentation and a good problem, and I will figure it out.
+            </p>
+          </div>
+        </section>
+
+        <section id="work">
+          <h2>Things I Have Built</h2>
+          <div class="entries">
+            <div class="entry">
+              <p class="time">2026</p>
+              <div>
+                <h3>The Dantide Automation Engine</h3>
+                <p class="muted">Python, Multi-Agent Pipelines, OAuth</p>
+                <ul>
+                  <li>Built an automated publishing engine that stages content and handles social publishing on a schedule.</li>
+                  <li>Wrote duplicate-detection checks to stop runaway agents from posting the same thing twice.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="entry">
+              <p class="time">2026</p>
+              <div>
+                <h3>Concurrent Counter & Thread Safety</h3>
+                <p class="muted">Java, Concurrency, Multithreading</p>
+                <ul>
+                  <li>An experiment pitting multiple threads against shared numbers to study race conditions up close.</li>
+                  <li>Added atomic locking mechanisms so threads stop corrupting each other under high load.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="entry">
+              <p class="time">2026</p>
+              <div>
+                <h3>Event Management System</h3>
+                <p class="muted">C++, Object-Oriented Design</p>
+                <ul>
+                  <li>A modular control system for managing zones, crowd alerts, and live event monitoring.</li>
+                  <li>Structured clean parent-child relationships so new features plug in without breaking existing ones.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="entry">
+              <p class="time">2025 - 2026</p>
+              <div>
+                <h3>Custom Data Structures & Query Tool</h3>
+                <p class="muted">C++, Java, SQL</p>
+                <ul>
+                  <li>Built my own MinHeaps and graph pathfinding algorithms from scratch because standard libraries teach you less.</li>
+                  <li>Built a terminal-based SQL query tool for searching and updating relational music databases.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Tools</h2>
+          <p class="skills">
+            Python / C++ / Java / TypeScript / SQL / Bash / Linux / Docker / PostgreSQL / MySQL / Git / Convincing AI agents to behave
+          </p>
+        </section>
+
+        <section id="links">
+          <h2>Links</h2>
+          <div class="links">
+            <a href="mailto:enockdansel@gmail.com">enockdansel@gmail.com</a>
+            <a href="https://github.com/enockNyamweya">github.com/enockNyamweya</a>
+            <a href="https://www.linkedin.com/in/danselonserio">linkedin.com/in/danselonserio</a>
+          </div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
