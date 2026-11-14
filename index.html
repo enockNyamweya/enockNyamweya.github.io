@@ -4,17 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <title>Enock Nyamweya | Software &amp; Systems</title>
+    <title>Enock Nyamweya</title>
     <meta
       name="description"
-      content="Enock Nyamweya builds backend systems, concurrency tooling, and automated pipelines."
+      content="Enock Nyamweya builds software, backend systems, and automation."
     />
     <link rel="canonical" href="https://enockdansel.me/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Enock Nyamweya | Software &amp; Systems" />
+    <meta property="og:title" content="Enock Nyamweya" />
     <meta
       property="og:description"
-      content="Backend systems, microgrid telemetry, and multi-agent automation pipelines."
+      content="Software, backend systems, microgrid telemetry, and automation."
     />
     <meta property="og:url" content="https://enockdansel.me/" />
     <link
@@ -22,206 +22,501 @@
       type="image/svg+xml"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111317'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23f8fafc' font-family='monospace' font-size='15' font-weight='700'%3EEN%3C/text%3E%3C/svg%3E"
     />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --text: #3d3d3d;
+        --muted: #7d8491;
+        --line: #d7dbe2;
+        --blue: #2563eb;
+        --orange: #f59e0b;
+        --soft: #f7f8fa;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111317;
+          --text: #e2e8f0;
+          --muted: #94a3b8;
+          --line: #262c36;
+          --blue: #60a5fa;
+          --orange: #fbbf24;
+          --soft: #1a202c;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        min-height: 100%;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100%;
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--blue);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      a:focus-visible,
+      summary:focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
+
+      .page {
+        width: 100%;
+        min-height: 100vh;
+        padding: 32px 18px 64px;
+      }
+
+      .sheet {
+        width: min(100%, 650px);
+        margin: 0 auto;
+      }
+
+      .topnav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        border-bottom: 2px solid var(--line);
+        margin-bottom: 24px;
+      }
+
+      .topnav a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0 14px;
+        color: var(--muted);
+        font-size: 12px;
+        border-bottom: 2px solid transparent;
+        transform: translateY(2px);
+      }
+
+      .topnav a:first-child {
+        padding-left: 0;
+      }
+
+      .topnav a:hover {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .topnav a.active {
+        color: var(--blue);
+        border-bottom-color: var(--orange);
+      }
+
+      .intro {
+        padding-bottom: 20px;
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--text);
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .subname {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .summary {
+        max-width: 600px;
+        margin: 16px 0 0;
+        color: var(--text);
+        font-size: 14px;
+      }
+
+      .quicklinks {
+        margin: 14px 0 0;
+      }
+
+      .quicklinks a + a {
+        margin-left: 4px;
+      }
+
+      .quicklinks a::before,
+      .entry-links a::before {
+        content: "[";
+        color: var(--muted);
+      }
+
+      .quicklinks a::after,
+      .entry-links a::after {
+        content: "]";
+        color: var(--muted);
+      }
+
+      section {
+        padding: 22px 0 0;
+        scroll-margin-top: 20px;
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        color: var(--text);
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      h3 {
+        display: inline;
+        margin: 0;
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .copy p + p {
+        margin-top: 12px;
+      }
+
+      .focus-list {
+        margin: 14px 0 0;
+        padding: 12px 14px;
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .focus-item {
+        font-size: 13px;
+      }
+
+      .focus-item strong {
+        color: var(--text);
+      }
+
+      .entries {
+        display: grid;
+        gap: 20px;
+      }
+
+      .entry {
+        display: block;
+      }
+
+      .entry-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 6px;
+      }
+
+      .time {
+        color: var(--muted);
+      }
+
+      .time::after {
+        content: " -";
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 1px 6px;
+        font-size: 11px;
+        line-height: 1.4;
+        color: var(--muted);
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 4px;
+      }
+
+      .badge-live {
+        color: var(--blue);
+        border-color: var(--blue);
+      }
+
+      .muted {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 3px;
+      }
+
+      .entry-desc {
+        margin-top: 6px;
+      }
+
+      .entry-links {
+        margin-top: 6px;
+        font-size: 12px;
+      }
+
+      .entry-links a + a {
+        margin-left: 6px;
+      }
+
+      ul {
+        list-style: none;
+        margin: 6px 0 0;
+        padding: 0;
+      }
+
+      li {
+        position: relative;
+        padding-left: 14px;
+        margin-top: 4px;
+      }
+
+      li::before {
+        content: "-";
+        position: absolute;
+        left: 0;
+        color: var(--muted);
+      }
+
+      details {
+        margin-top: 8px;
+        padding: 8px 12px;
+        background: var(--soft);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+      }
+
+      summary {
+        cursor: pointer;
+        color: var(--muted);
+        font-size: 12px;
+        user-select: none;
+      }
+
+      details[open] summary {
+        color: var(--blue);
+        margin-bottom: 6px;
+      }
+
+      details ul {
+        margin-top: 2px;
+        font-size: 13px;
+      }
+
+      .tools-grid {
+        display: grid;
+        gap: 8px;
+      }
+
+      .tool-row {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 10px;
+        align-items: baseline;
+      }
+
+      .tool-label {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .tool-items {
+        line-height: 1.7;
+      }
+
+      @media (max-width: 540px) {
+        .tool-row {
+          grid-template-columns: 1fr;
+          gap: 2px;
+        }
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .footer {
+        margin-top: 32px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--muted);
+        font-size: 12px;
+      }
+    </style>
   </head>
   <body>
-    <header id="top">
-      <nav aria-label="Primary navigation">
-        <p>
-          <a href="#top"><strong>Enock Nyamweya</strong></a>
-          &middot;
+    <main class="page" id="top">
+      <article class="sheet" aria-label="Enock Nyamweya portfolio">
+        <nav class="topnav" aria-label="Primary navigation">
+          <a class="active" href="#top">Enock Nyamweya</a>
           <a href="#about">About</a>
-          &middot;
           <a href="#work">Work</a>
-          &middot;
           <a href="#tools">Tools</a>
-          &middot;
           <a href="#links">Links</a>
-        </p>
-      </nav>
+        </nav>
 
-      <h1>Enock Nyamweya</h1>
-      <p><strong>Software &amp; Systems</strong></p>
-      <p>
-        I like building things that work, taking apart things that do not, and making computers do the boring work for me.
-      </p>
-      <p>
-        <a href="mailto:enockdansel@gmail.com">Email</a>
-        &middot;
-        <a href="https://github.com/enockNyamweya">GitHub</a>
-        &middot;
-        <a href="https://www.linkedin.com/in/danselonserio">LinkedIn</a>
-        &nbsp;
-        <button type="button" popovertarget="quick-contact">Quick Contact</button>
-      </p>
-
-      <div id="quick-contact" popover>
-        <h2>Contact</h2>
-        <p>Direct channels:</p>
-        <ul>
-          <li>Email: <a href="mailto:enockdansel@gmail.com">enockdansel@gmail.com</a></li>
-          <li>GitHub: <a href="https://github.com/enockNyamweya">github.com/enockNyamweya</a></li>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/danselonserio">linkedin.com/in/danselonserio</a></li>
-        </ul>
-        <p>
-          <button type="button" popovertarget="quick-contact" popovertargetaction="hide">Close</button>
-        </p>
-      </div>
-    </header>
-
-    <hr />
-
-    <main>
-      <section id="about" aria-labelledby="about-heading">
-        <h2 id="about-heading">About</h2>
-        <p>
-          Most of my time goes into writing backend systems, managing concurrency so threads do not step on each other, and automating pipelines so I never have to do the same task twice by hand.
-        </p>
-        <p>
-          I do not get attached to specific languages. Hand me clear documentation and a good problem, and I will figure it out.
-        </p>
-
-        <dl>
-          <dt><strong>Systems</strong></dt>
-          <dd>Runtime behavior, concurrency, and clean architecture across any stack.</dd>
-
-          <dt><strong>Automation</strong></dt>
-          <dd>Multi-agent pipelines and validation guardrails that run reliably on their own.</dd>
-
-          <dt><strong>Data</strong></dt>
-          <dd>Practical schema design, fast queries, and algorithms built from first principles.</dd>
-        </dl>
-      </section>
-
-      <hr />
-
-      <section id="work" aria-labelledby="work-heading">
-        <h2 id="work-heading">Work</h2>
-
-        <article aria-labelledby="proj-dantide">
-          <h3 id="proj-dantide">
-            The Dantide OS
-            (<time datetime="2026">2026</time>)
-            <mark>Private</mark>
-          </h3>
-          <p>
-            <code>Python</code> &middot; <code>GitHub Actions</code> &middot; <code>OAuth</code> &middot; <code>JSON Pipelines</code>
+        <header class="intro">
+          <h1>Enock Nyamweya</h1>
+          <p class="subname">Software &amp; Systems</p>
+          <p class="summary">
+            I like building things that work, taking apart things that do not, and making computers do the boring work for me.
           </p>
-          <p>
-            Automated multi-account publishing and analytics engine built around an analyze, write, check, review, deploy, and measure feedback loop.
+          <p class="quicklinks">
+            Links:
+            <a href="mailto:enockdansel@gmail.com">Email</a>
+            <a href="https://github.com/enockNyamweya">GitHub</a>
+            <a href="https://www.linkedin.com/in/danselonserio">LinkedIn</a>
           </p>
-          <details open>
-            <summary>Implementation highlights</summary>
-            <ul>
-              <li>Built queue validation gates and duplicate-detection checks so drafts are verified before reaching live publishing queues.</li>
-              <li>Integrated scheduled GitHub Actions dispatch, dry-run deployment tooling, and analytics feedback reports into one closed loop.</li>
-            </ul>
-          </details>
-        </article>
+        </header>
 
-        <br />
+        <section id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading">About</h2>
+          <div class="copy">
+            <p>
+              Most of my time goes into writing backend systems, managing concurrency so threads do not step on each other, and automating pipelines so I never have to do the same task twice by hand.
+            </p>
+            <p>
+              I do not get attached to specific languages. Hand me clear documentation and a good problem, and I will figure it out.
+            </p>
+          </div>
+          <div class="focus-list">
+            <div class="focus-item">
+              <strong>Systems:</strong> Runtime behavior, concurrency, and clean architecture across any stack.
+            </div>
+            <div class="focus-item">
+              <strong>Automation:</strong> Multi-agent pipelines and validation guardrails that run reliably on their own.
+            </div>
+            <div class="focus-item">
+              <strong>Data:</strong> Practical schema design, fast queries, and algorithms built from first principles.
+            </div>
+          </div>
+        </section>
 
-        <article aria-labelledby="proj-gridpulse">
-          <h3 id="proj-gridpulse">
-            GridPulse
-            (<time datetime="2026">2026</time>)
-            <mark>Live</mark>
-          </h3>
-          <p>
-            <code>Python</code> &middot; <code>FastAPI</code> &middot; <code>WebSockets</code> &middot; <code>SQLite WAL</code> &middot; <code>React</code> &middot; <code>TypeScript</code>
-          </p>
-          <p>
-            Smart-grid digital telemetry simulator, transformer overload protection engine, and Battery Energy Storage System (BESS) coordinator for distribution microgrids (<code>50.00 Hz</code> / <code>240.0 V</code>).
-          </p>
-          <p>
-            <a href="https://gridpulse-ea.netlify.app">Live Deployment</a>
-            &middot;
-            <a href="https://github.com/enockNyamweya/GridPulse">GitHub Repository</a>
-          </p>
-          <details>
-            <summary>Architecture &amp; subsystems</summary>
-            <ul>
-              <li>Simulates 50.00 Hz frequency droop, IEC 60076-7 transformer thermal modeling, and LFP battery Coulomb counting across a 6-node distribution corridor at 1.5-second intervals.</li>
-              <li>Implements 64-bit binary Remote Terminal Unit (RTU) framing with CRC-8 verification, mutex-synchronized ring buffering, propositional breaker interlocks, and an ACID-compliant SQLite WAL ledger.</li>
-              <li>Separates consumer outage and solar backup planning from operator grid telemetry in a dual-workspace React and TypeScript interface.</li>
-            </ul>
-          </details>
-        </article>
+        <section id="work" aria-labelledby="work-heading">
+          <h2 id="work-heading">Work</h2>
+          <div class="entries">
+            <div class="entry">
+              <div class="entry-head">
+                <span class="time">2026</span>
+                <h3>The Dantide OS</h3>
+                <span class="badge">Private</span>
+              </div>
+              <p class="muted">Python, GitHub Actions, OAuth, JSON Pipelines</p>
+              <p class="entry-desc">
+                Automated multi-account publishing and analytics engine running a six-stage feedback loop across drafting, validation, scheduling, and measurement.
+              </p>
+              <details open>
+                <summary>Implementation notes</summary>
+                <ul>
+                  <li>Built queue validation gates and duplicate-detection checks so drafts pass automated safety rules before reaching live queues.</li>
+                  <li>Wired scheduled GitHub Actions dispatch, dry-run deployment tooling, and analytics reporting into a closed feedback loop.</li>
+                </ul>
+              </details>
+            </div>
 
-        <br />
+            <div class="entry">
+              <div class="entry-head">
+                <span class="time">2026</span>
+                <h3>GridPulse</h3>
+                <span class="badge badge-live">Live</span>
+              </div>
+              <p class="muted">Python, FastAPI, WebSockets, SQLite WAL, React, TypeScript</p>
+              <p class="entry-desc">
+                Smart-grid telemetry simulator, transformer overload protection engine, and Battery Energy Storage System (BESS) coordinator for distribution microgrids (50.00 Hz / 240.0 V).
+              </p>
+              <p class="entry-links">
+                <a href="https://gridpulse-ea.netlify.app">Live</a>
+                <a href="https://github.com/enockNyamweya/GridPulse">GitHub</a>
+              </p>
+              <details>
+                <summary>Architecture &amp; subsystems</summary>
+                <ul>
+                  <li>Simulates 50.00 Hz frequency droop, IEC 60076-7 transformer thermal modeling, and LFP battery Coulomb counting across a 6-node distribution corridor at 1.5-second intervals.</li>
+                  <li>Implements 64-bit binary Remote Terminal Unit (RTU) framing with CRC-8 verification, mutex-synchronized ring buffering, propositional breaker interlocks, and an ACID SQLite WAL ledger.</li>
+                  <li>Splits consumer outage and solar backup planning from operator telemetry inside a dual-workspace React and TypeScript interface.</li>
+                </ul>
+              </details>
+            </div>
 
-        <article aria-labelledby="proj-campusguard">
-          <h3 id="proj-campusguard">
-            CampusGuard
-            (<time datetime="2026">2026</time>)
-            <mark>Public</mark>
-          </h3>
-          <p>
-            <code>C++11</code> &middot; <code>Docker</code> &middot; <code>Makefile</code> &middot; <code>Valgrind</code> &middot; <code>GDB</code>
-          </p>
-          <p>
-            Emergency-response coordination platform in C++11 connecting campus security, medical personnel, facilities, and access-control subsystems behind a unified dispatch model.
-          </p>
-          <p>
-            <a href="https://github.com/enockNyamweya/campusguard">GitHub Repository</a>
-          </p>
-          <details>
-            <summary>Design patterns &amp; tooling</summary>
-            <ul>
-              <li>Combines six Gang of Four patterns: Command (operator actions and undo history), Mediator (central dispatch), Adapter (legacy turnstile hardware), Facade (workflow entry point), State (incident lifecycle), and Strategy (swappable response tactics).</li>
-              <li>Packaged with Docker and a Makefile for reproducible builds, Valgrind leak checks, and GDB debugging.</li>
-            </ul>
-          </details>
-        </article>
-      </section>
+            <div class="entry">
+              <div class="entry-head">
+                <span class="time">2026</span>
+                <h3>CampusGuard</h3>
+                <span class="badge">Public</span>
+              </div>
+              <p class="muted">C++11, Docker, Makefile, Valgrind, GDB</p>
+              <p class="entry-desc">
+                Emergency-response coordination platform in C++11 connecting campus security, medical personnel, facilities, and access-control hardware behind one dispatch layer.
+              </p>
+              <p class="entry-links">
+                <a href="https://github.com/enockNyamweya/campusguard">GitHub</a>
+              </p>
+              <details>
+                <summary>Design patterns &amp; tooling</summary>
+                <ul>
+                  <li>Integrates six Gang of Four patterns: Command (operator actions and undo history), Mediator (central dispatch), Adapter (legacy turnstile hardware), Facade (workflow entry point), State (incident lifecycle), and Strategy (swappable response tactics).</li>
+                  <li>Packaged with Docker and a Makefile for repeatable builds, Valgrind leak checks, and GDB debugging.</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+        </section>
 
-      <hr />
+        <section id="tools" aria-labelledby="tools-heading">
+          <h2 id="tools-heading">Tools</h2>
+          <div class="tools-grid">
+            <div class="tool-row">
+              <span class="tool-label">Languages</span>
+              <span class="tool-items">Python / C++ / C / Java / TypeScript / JavaScript / PHP / SQL / Bash / Assembly</span>
+            </div>
+            <div class="tool-row">
+              <span class="tool-label">Data &amp; APIs</span>
+              <span class="tool-items">PostgreSQL / MySQL / SQLite / FastAPI / WebSockets / REST</span>
+            </div>
+            <div class="tool-row">
+              <span class="tool-label">Infrastructure</span>
+              <span class="tool-items">Linux / Docker / Git / GitHub Actions / Valgrind / GDB</span>
+            </div>
+          </div>
+        </section>
 
-      <section id="tools" aria-labelledby="tools-heading">
-        <h2 id="tools-heading">Tools</h2>
-        <table>
-          <tbody>
-            <tr>
-              <td><strong>Languages</strong>&nbsp;&nbsp;&nbsp;</td>
-              <td>
-                <code>Python</code> &middot; <code>C++</code> &middot; <code>C</code> &middot; <code>Java</code> &middot; <code>TypeScript</code> &middot; <code>JavaScript</code> &middot; <code>PHP</code> &middot; <code>SQL</code> &middot; <code>Bash</code> &middot; <code>Assembly</code>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Data &amp; APIs</strong>&nbsp;&nbsp;&nbsp;</td>
-              <td>
-                <code>PostgreSQL</code> &middot; <code>MySQL</code> &middot; <code>SQLite</code> &middot; <code>FastAPI</code> &middot; <code>WebSockets</code> &middot; <code>REST</code>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Infrastructure</strong>&nbsp;&nbsp;&nbsp;</td>
-              <td>
-                <code>Linux</code> &middot; <code>Docker</code> &middot; <code>Git</code> &middot; <code>GitHub Actions</code> &middot; <code>Valgrind</code> &middot; <code>GDB</code>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+        <section id="links" aria-labelledby="links-heading">
+          <h2 id="links-heading">Links</h2>
+          <div class="links">
+            <a href="mailto:enockdansel@gmail.com">enockdansel@gmail.com</a>
+            <a href="https://github.com/enockNyamweya">github.com/enockNyamweya</a>
+            <a href="https://www.linkedin.com/in/danselonserio">linkedin.com/in/danselonserio</a>
+          </div>
+        </section>
 
-      <hr />
-
-      <section id="links" aria-labelledby="links-heading">
-        <h2 id="links-heading">Links</h2>
-        <address>
-          <ul>
-            <li>Email: <a href="mailto:enockdansel@gmail.com">enockdansel@gmail.com</a></li>
-            <li>GitHub: <a href="https://github.com/enockNyamweya">github.com/enockNyamweya</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/danselonserio">linkedin.com/in/danselonserio</a></li>
-          </ul>
-        </address>
-      </section>
+        <footer class="footer">
+          <span>Enock Nyamweya</span>
+          <a href="#top">Back to top</a>
+        </footer>
+      </article>
     </main>
-
-    <hr />
-
-    <footer>
-      <p>
-        <small>Enock Nyamweya &middot; <a href="#top">Back to top</a></small>
-      </p>
-    </footer>
   </body>
 </html>
