@@ -269,7 +269,7 @@
       }
 
       .entry-links {
-        margin-top: 6px;
+        margin-top: 8px;
         font-size: 12px;
       }
 
@@ -421,18 +421,28 @@
             <div class="entry">
               <div class="entry-head">
                 <span class="time">2026</span>
-                <h3>The Dantide OS</h3>
-                <span class="badge">Private</span>
+                <h3>GridPulse</h3>
+                <span class="badge badge-live">Live</span>
               </div>
-              <p class="muted">Python, GitHub Actions, OAuth, JSON Pipelines</p>
+              <p class="muted">Solo build &middot; Python, FastAPI, WebSockets, SQLite WAL, React, TypeScript</p>
               <p class="entry-desc">
-                Automated multi-account publishing and analytics engine running a six-stage feedback loop across drafting, validation, scheduling, and measurement.
+                Addresses transformer thermal overloads and frequency sags (&lt; 49.20 Hz) on Kenyan 11 kV / 240 V distribution microgrids during solar cloud transients and evening demand spikes.
               </p>
-              <details open>
-                <summary>Implementation notes</summary>
+              <ul>
+                <li>Built a 1.5-second physics and protection twin modeling a 6-node distribution corridor (450 kW geothermal, 280 kW solar, 500 kVA transformer, and a 400 kWh / 250 kW LFP battery bank) across four deterministic grid states.</li>
+                <li>Separated an everyday Consumer Blackout &amp; Solar Backup Planner (battery sizing and diesel KES savings) from a 4-tab Grid Operator Console (Overview, Topology, Dispatch, Protocol) over WebSockets.</li>
+              </ul>
+              <p class="entry-links">
+                <a href="https://gridpulse-ea.netlify.app">Live</a>
+                <a href="https://github.com/enockNyamweya/GridPulse">GitHub</a>
+                <a href="https://github.com/enockNyamweya/GridPulse/blob/main/docs/system-architecture.svg">Architecture</a>
+              </p>
+              <details>
+                <summary>Problem, system design &amp; safeguards</summary>
                 <ul>
-                  <li>Built queue validation gates and duplicate-detection checks so drafts pass automated safety rules before reaching live queues.</li>
-                  <li>Wired scheduled GitHub Actions dispatch, dry-run deployment tooling, and analytics reporting into a closed feedback loop.</li>
+                  <li><strong>Problem / Constraint:</strong> Secondary distribution feeders lack sub-second telemetry, pushing step-down transformers past IEC 60076-7 thermal limits while priority clinic loads require uninterrupted power.</li>
+                  <li><strong>System Design:</strong> Coordinates Nominal, Battery dispatch, Demand response (28% commercial shedding), and Islanded (55% shedding) states while streaming 64-bit CRC-8 RTU frames through a mutex-synchronized ring buffer.</li>
+                  <li><strong>Verification / Safeguards:</strong> Enforces propositional breaker interlocks and records state transitions in an ACID-compliant SQLite WAL audit ledger.</li>
                 </ul>
               </details>
             </div>
@@ -440,23 +450,23 @@
             <div class="entry">
               <div class="entry-head">
                 <span class="time">2026</span>
-                <h3>GridPulse</h3>
-                <span class="badge badge-live">Live</span>
+                <h3>The Dantide OS</h3>
+                <span class="badge">Private</span>
               </div>
-              <p class="muted">Python, FastAPI, WebSockets, SQLite WAL, React, TypeScript</p>
+              <p class="muted">Solo system &middot; Python, GitHub Actions, OAuth, JSON Pipelines</p>
               <p class="entry-desc">
-                Smart-grid telemetry simulator, transformer overload protection engine, and Battery Energy Storage System (BESS) coordinator for distribution microgrids (50.00 Hz / 240.0 V).
+                Eliminates manual scheduling and broken-link errors across multi-account social publishing, analytics ingestion, and six digital books by enforcing automated safety gates before anything ships.
               </p>
-              <p class="entry-links">
-                <a href="https://gridpulse-ea.netlify.app">Live</a>
-                <a href="https://github.com/enockNyamweya/GridPulse">GitHub</a>
-              </p>
+              <ul>
+                <li>Runs a six-stage closed loop (analyze, write, validate, review, deploy, measure) linking analytics reports directly to scheduled GitHub Actions publishing workflows.</li>
+                <li>Enforces pre-publish checks for duplicate prevention, formatting rules, and single-source product catalog link integrity before drafts enter live queues.</li>
+              </ul>
               <details>
-                <summary>Architecture &amp; subsystems</summary>
+                <summary>Pipeline &amp; guardrails</summary>
                 <ul>
-                  <li>Simulates 50.00 Hz frequency droop, IEC 60076-7 transformer thermal modeling, and LFP battery Coulomb counting across a 6-node distribution corridor at 1.5-second intervals.</li>
-                  <li>Implements 64-bit binary Remote Terminal Unit (RTU) framing with CRC-8 verification, mutex-synchronized ring buffering, propositional breaker interlocks, and an ACID SQLite WAL ledger.</li>
-                  <li>Splits consumer outage and solar backup planning from operator telemetry inside a dual-workspace React and TypeScript interface.</li>
+                  <li><strong>Problem / Constraint:</strong> High-volume multi-account publishing breaks when automated agents repeat posts, violate style rules, or embed outdated product links.</li>
+                  <li><strong>System Design:</strong> Stages new drafts in isolated review queues, requires dry-run validation prior to live merges, and feeds performance metrics back into drafting.</li>
+                  <li><strong>Verification / Safeguards:</strong> Blocks uncatalogued URLs and rule violations at validation time, keeps credentials out of version control, and includes a workflow kill switch.</li>
                 </ul>
               </details>
             </div>
@@ -467,18 +477,23 @@
                 <h3>CampusGuard</h3>
                 <span class="badge">Public</span>
               </div>
-              <p class="muted">C++11, Docker, Makefile, Valgrind, GDB</p>
+              <p class="muted">3-person team &middot; C++11, Docker, Makefile, Valgrind, GDB</p>
               <p class="entry-desc">
-                Emergency-response coordination platform in C++11 connecting campus security, medical personnel, facilities, and access-control hardware behind one dispatch layer.
+                Coordinates campus security, medical, facilities, and fire response units during live emergencies without tight coupling between operator controls and legacy access hardware.
               </p>
+              <ul>
+                <li>Built across 51 C++11 source and header files (with Kyle Pillay and Terrence Hluyo) using six interacting Gang of Four patterns for dispatch, incident states, and hardware adaptation.</li>
+                <li>Containerized with Docker and a Makefile so builds, Valgrind memory-leak audits, and GDB debugging run consistently in any environment.</li>
+              </ul>
               <p class="entry-links">
                 <a href="https://github.com/enockNyamweya/campusguard">GitHub</a>
               </p>
               <details>
-                <summary>Design patterns &amp; tooling</summary>
+                <summary>Request flow &amp; verification</summary>
                 <ul>
-                  <li>Integrates six Gang of Four patterns: Command (operator actions and undo history), Mediator (central dispatch), Adapter (legacy turnstile hardware), Facade (workflow entry point), State (incident lifecycle), and Strategy (swappable response tactics).</li>
-                  <li>Packaged with Docker and a Makefile for repeatable builds, Valgrind leak checks, and GDB debugging.</li>
+                  <li><strong>Problem / Constraint:</strong> Emergency operators need undoable dispatch commands, swappable containment tactics, and legacy turnstile compatibility without cross-subsystem dependencies.</li>
+                  <li><strong>System Design:</strong> Operator actions (Command) enter through CampusEmergencyFacade, route via CentralDispatchMediator across four units, enforce Reported &rarr; Dispatched &rarr; Contained &rarr; Resolved transitions (State), adapt LegacyTurnstileSystem (Adapter), and swap FullEvacuationStrategy vs. LockdownContainmentStrategy (Strategy).</li>
+                  <li><strong>Verification / Safeguards:</strong> Compiled under C++11 in Docker and audited for memory leaks with Valgrind alongside GDB breakpoint debugging.</li>
                 </ul>
               </details>
             </div>
